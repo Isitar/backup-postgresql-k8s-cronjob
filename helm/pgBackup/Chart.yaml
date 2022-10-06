@@ -1,0 +1,9 @@
+apiVersion: v2
+name: pgBackup
+description: A Helm chart for Backing up pg data to azure
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"

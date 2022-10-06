@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup
+spec:
+  schedule: .Values.schedule
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: backup
+            image: "{.Values.image.repository}:{.Values.image.tag}"
+            imagePullPolicy: .Values.image.imagePullPolicy
+            env:
+
+            - name: POSTGRES_HOST
+              value: .Values.secrets.POSTGRES_HOST
+
+            - name: POSTGRES_USER
+              value: .Values.secrets.POSTGRES_USER
+
+            - name: POSTGRES_PASSWORD
+              value: .Values.secrets.POSTGRES_PASSWORD
+
+            - name: AZURE_STORAGE_CONNECTION_STRING
+              value: .Values.secrets.AZURE_STORAGE_CONNECTION_STRING
+          restartPolicy: OnFailure

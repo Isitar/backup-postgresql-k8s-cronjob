@@ -1,0 +1,15 @@
+
+schedule: "0 * * * *" # every hour is the default
+
+image:
+  repository: postgres
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+
+secrets:
+  POSTGRES_HOST:
+  POSTGRES_USER:
+  POSTGRES_PASSWORD:
+  AZURE_STORAGE_CONNECTION_STRING:
