@@ -44,4 +44,4 @@ jobs:
           push: true
           tags: 14-${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          file: image/14/Dockerile
+          file: image/14/Dockerfile
