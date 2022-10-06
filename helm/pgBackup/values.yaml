@@ -2,9 +2,9 @@
 schedule: "0 * * * *" # every hour is the default
 
 image:
-  repository: postgres
+  repository: ghcr.io/isitar/backup-postgresql-k8s-cronjob
   pullPolicy: IfNotPresent
-  tag: ""
+  tag: master
 
 imagePullSecrets: []
 
